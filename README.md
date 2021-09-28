@@ -83,8 +83,9 @@ del grupo de trabajo.
 
 **2.1. Control del sistema de desplazamiento de la plataforma**
 ![image info](images/dia1.png)
-**2.2. Control del sistema de manipulación de materiales.**
 
+**2.2. Control del sistema de manipulación de materiales.**
+![image info](images/dia2.png)
 
 ## 3.CODIFICACION EN C/C++.
 
@@ -98,10 +99,6 @@ y el resto de por donde el robot no circularía está marcado con un punto ‘.�
 puntos blancos por los cuales el robot no puede circular), en la figura número 1 se puede
 observar nuestro prototipo de la trayectoria.
 
-```
-Figura 1. Representación de la
-trayectoria del robot.
-```
 A partir de ésta trayectoria, comenzamos con lo que sería la función a la que llevaría el
 avance del robot de la cual su nombre, “Desplazamiento_Avanzar”. Un contador llamado
 “dirección”, es nuestro guía para poder hacer el movimiento del robot. Resulta que con un
@@ -110,7 +107,6 @@ estamos en el punto (0,0) de la matriz, a la derecha hay un punto, eso le muestr
 que la siguiente dirección no puede ser hacia la derecha ya que no está en la trayectoria, y
 que, si debe hacerlo hacia abajo ya que hay un guion al piso o un punto en negro, que
 respectivamente el sensor s1 detectaría.
-
 
 En el ejemplo anterior, en el que el robot se encuentra en la posición número (0,0), el robot
 no puede moverse ni a la derecha ni hacia la izquierda ni hacia arriba, sólo hacia abajo. Así
@@ -121,27 +117,28 @@ entre 1 y 4 para designar el movimiento. A la variable dirección se le va a asi
 y 4 si es hacia arriba. En las figuras número 2,3,4 y 5 respectivamente se pueden apreciar
 en código como se vería representaría el movimiento del robot.
 
-```
-Figura 2. Representación en código de
-un movimiento hacia la derecha.
-```
+![image info](images/fig2.png)
+
+_Figura 2. Representación en código de un movimiento hacia la derecha._
+
 Para un respectivo movimiento hacia la izquierda se haría lo que ilustra la figura 3.
 
-```
-Figura 3. Representación en código de
-un movimiento hacia la derecha.
-```
+![image info](images/fig3.png)
+
+_Figura 3. Representación en código de un movimiento hacia la derecha._
 
 Para un respectivo movimiento abajo se haría lo que ilustra la figura 4.
 
-```
-Figura 4. Representación en código de
-un movimiento hacia abajo.
-```
+![image info](images/fig4.png)
+
+_Figura 4. Representación en código de un movimiento hacia abajo._
+
 Para un respectivo movimiento abajo se haría lo que ilustra la figura 4.
 
-_Figura 5. Representación en código de
-un movimiento hacia abajo._
+![image info](images/fig5.png)
+
+_Figura 5. Representación en código de un movimiento hacia abajo._
+
 Nótese que cada vez que el robot va a hacer un movimiento, la variable booleana que queda
 en verdadero o “ _true”_ es la que designa hacia qué dirección se va a mover el robot. Para el
 ejemplo de si el robot se encuentra en el punto (0,0), en el que el movimiento es hacia
@@ -165,30 +162,34 @@ las estaciones, si en un punto en específico hay un carácter ‘n’ en vez de
 que en ése punto hay una estación y que por lo tanto el robot tiene que detenerse. En las
 figuras 6,7,8,9 se muestra lo que realiza la función detenerse.
 
-_Figura 6. Representación de como el robot debe trasladarse o detenerse.
-Cuando el siguiente movimiento es a la derecha._
+![image info](images/fig6.png)
+
+_Figura 6. Representación de como el robot debe trasladarse o detenerse. Cuando el siguiente movimiento es a la derecha._
+
 En la figura 6, anteriormente mostrada, se puede observar que cuando el movimiento es
 hacia la derecha, en el código se hacen otros dos condicionales, en los que se verifica si en
 la siguiente posición el robot debe seguir con su trayectoria y girar hacia la derecha o
 detenerse en la estación.
 
+![image info](images/fig7.png)
 
-_Figura 7. Representación de si el robot debe trasladarse o detenerse.
-Cuando el siguiente movimiento es hacia la izquierda._
+_Figura 7. Representación de si el robot debe trasladarse o detenerse. Cuando el siguiente movimiento es hacia la izquierda._
+
 En la figura 7 anteriormente mostrada, se puede notar que cuando la siguiente dirección es
 hacia la izquierda, se vuelve a verificar si en el siguiente movimiento hay o no una estación,
 por lo cual el robot debe parar y en caso de que no seguir su trayecto.
 
-_Figura 8. Representación de si el robot debe trasladarse o detenerse.
-Cuando el siguiente movimiento es hacia arriba._
+![image info](images/fig8.png)
+
+_Figura 8. Representación de si el robot debe trasladarse o detenerse. Cuando el siguiente movimiento es hacia arriba._
+
 En la figura 8 anteriormente mostrada, se puede notar que cuando la siguiente dirección es
 hacia la arriba, se vuelve a verificar si en el siguiente movimiento hay o no una estación, por
 lo cual el robot debe parar y en caso de que no seguir su trayecto.
 
-```
-Figura 9. Representación de si el robot debe trasladarse o detenerse.
-Cuando el siguiente movimiento es hacia abajo.
-```
+![image info](images/fig9.png)
+
+_Figura 9. Representación de si el robot debe trasladarse o detenerse. Cuando el siguiente movimiento es hacia abajo._
 
 Finalmente, en la figura 9 anteriormente mostrada, se puede notar que cuando la siguiente
 dirección es hacia la abajo, se vuelve a verificar si en el siguiente movimiento hay o no una
@@ -205,10 +206,9 @@ imprimirá, “Giró hacia la derecha” y va a cambiar el valor de dirección p
 se ha desplazado. En la figura 10, se puede observar de una manera más clara el enfoque
 de ésta función.
 
-```
-Figura 10. Representación cómo se mostraría el movimiento en
-sentido de las agujas del reloj, del movimiento del robot.
-```
+![image info](images/fig10.png)
+
+_Figura 10. Representación cómo se mostraría el movimiento en sentido de las agujas del reloj, del movimiento del robot._
 
 Nótese que en cada uno de los booleanos que sea el que esté en “ _true”_ , va a imprimir giró
 a la derecha, esto se debe a la funcionalidad de la función.
@@ -220,10 +220,12 @@ robot es a la hora de girar hacia la izquierda o al contrario de las manecillas 
 esto se hizo lo mismo que en la función anterior solamente que cambiando en vez de “giró
 a la derecha” por “giró a la izquierda”.
 
-```
-Figura 11. Representación cómo se mostraría el movimiento en
-sentido de las agujas del reloj, del movimiento del robot.
-```
+
+![image info](images/fig11.png)
+
+_Figura 11. Representación cómo se mostraría el movimiento en
+sentido de las agujas del reloj, del movimiento del robot._
+
 En la figura 11, anteriormente mostrada se puede analizar cómo cambia en un poco la
 estructura de ésta figura a la de la anterior. Aunque en un poco mínimo el cambio, en la
 práctica sería algo considerable.
@@ -239,20 +241,19 @@ blanco quiere decir que la línea cambio de rumbo y verificar con los sensores 2
 (encargados de un movimiento hacia la izquierda y derecha respectivamente. En la figura
 12 y 13 se puede observar de una manera más clara como hace el robot esta operación.
 
-```
-Figura 12. Representación función Char1_ lectura
-Cuando el movimiento es hacia la derecha e izquierda.
-```
+![image info](images/fig12.png)
+
+_Figura 12. Representación función Char1_ lectura. Cuando el movimiento es hacia la derecha e izquierda._
+
 En la figura 12 se puede observar como el robot hace lo nombrado anteriormente, para los
 casos de derecha e izquierda revisa si en la siguiente posición hay un carácter ‘n’, que le
 indique girar, por lo tanto, lo retornará de lo contrario, retornará ‘b’, o sea que por ahí no
 puede circular.
 
+![image info](images/fig13.png)
 
-```
-Figura 13. Representación función Char1_ lectura
-Cuando el movimiento es hacia arriba o abajo
-```
+_Figura 13. Representación función Char1_ lectura. Cuando el movimiento es hacia arriba o abajo_
+
 En la figura anterior se puede observar lo que sucede cuando el robot se va a diriir hacia la
 abajo o hacia arriba. En éste caso vuelve a hacer lo mismo que ocurrió anteriormente, revisa
 en que trayectoria está el robot y dependiendo de ésta verificará si debe o no avanzar.
@@ -263,10 +264,9 @@ La función charS2_Lectura.Ésta función es la que nos retorna lo que está ley
 
 2. En las imágenes 14 y 15 se puede apreciar cómo funciona.
 
-```
-Figura 14. Representación función Char1_ lectura
-Cuando el movimiento es hacia derecha o izquierda
-```
+![image info](images/fig14.png)
+
+_Figura 14. Representación función Char1_ lectura. Cuando el movimiento es hacia derecha o izquierda._
 
 En la figura 14 se puede observar como el robot hace lo nombrado anteriormente, para
 los casos de derecha e izquierda revisa si en la siguiente posición hay un carácter ‘n’, que
@@ -305,9 +305,8 @@ avanzar.
 
 **3.2. Control del sistema de manipulación de materiales:**
 
-```
 3.2.1. Void Materiales_ArrojarCubo.
-```
+
 Unos de los factores importantes a la hora de la implementación del robot es a la hora en
 la cual tiene que tiene que saber cuándo tiene que arrojar un cubo. La función
 “Materiales_ArrojarCubo”, es la encargada de ésta acción. En la figura 18 se puede observar
@@ -443,10 +442,10 @@ Figura 29. Representación función Char S7_ lectura.
 
 **6. Gráficos de las diferentes situaciones a las que se enfrenta el robot.**
 
-```
 Gráfica 1. Modelo en 3D del robot con sus respectivos sensores.
-```
-```
+
+![image](https://user-images.githubusercontent.com/75490695/135138896-1b3f0725-f94d-4f14-a84d-cdf45aa78a4c.png)
+
 Gráfica 2. Vistas superiores de cada uno de los movimientos del robot, sus sensores
 y banda transportadora, y lozas del escenario de funcionamiento.
 ```
@@ -475,8 +474,6 @@ realizar este proyecto y pudimos mejorar nuestra capacidad de análisis algorít
 **Referencias**
 
 Rodríguez, J, (2016). _Graficas del informe técnico de Proyecto_1 grupo 3._
-
 Trujillo, C, (2016). _Trabajo escrito del informe técnico de Proyecto_1 grupo 3._
 Huérfano, J, (2016). _Código en c/c++ del informe técnico de Proyecto_1 grupo 3._
-
 Rojas, S, (2016). _Objetivos y conclusiones del informe técnico de Proyecto_1 grupo 3._
