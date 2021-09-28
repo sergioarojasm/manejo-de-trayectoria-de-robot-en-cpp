@@ -82,8 +82,7 @@ del grupo de trabajo.
 ## 2.DIAGRAMAS DE FLUJO
 
 **2.1. Control del sistema de desplazamiento de la plataforma**
-
-
+![image info](images/dia1.png)
 **2.2. Control del sistema de manipulación de materiales.**
 
 
